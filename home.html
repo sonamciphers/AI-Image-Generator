@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Image Generator</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header Section -->
+        <header class="header">
+
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <h1>AI Image Generator</h1>
+            </div>
+
+            <!-- Dark Mode Button -->
+            <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </header>
+
+
+        <!-- Main Content -->
+        <main>
+
+            <section class="generator-section">
+
+                <!-- Prompt Input -->
+                <div class="prompt-box">
+
+                    <label for="prompt" class="visually-hidden">
+                        Describe your image
+                    </label>
+
+                    <textarea
+                        id="prompt"
+                        placeholder="Describe your imagination in detail..."
+                        rows="5">
+                    </textarea>
+
+                    <!-- Random Prompt Button -->
+                    <button
+                        class="random-btn"
+                        id="randomPrompt"
+                        title="Generate a random prompt"
+                        aria-label="Generate random prompt">
+
+                        <i class="fa-solid fa-dice"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Generation Options -->
+                <div class="options">
+
+                    <!-- AI Model Selection -->
+                    <div class="option-group">
+
+                        <label for="model" class="visually-hidden">
+                            Select AI Model
+                        </label>
+
+                        <select id="model">
+
+                            <option value="flux">Flux Model</option>
+
+                            <option value="turbo">Turbo Model</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Image Count -->
+                    <div class="option-group">
+
+                        <label for="imageCount" class="visually-hidden">
+                            Select Image Count
+                        </label>
+
+                        <select id="imageCount">
+
+                            <option value="1">1 Image</option>
+
+                            <option value="2">2 Images</option>
+
+                            <option value="3">3 Images</option>
+
+                            <option value="4">4 Images</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Aspect Ratio -->
+                    <div class="option-group">
+
+                        <label for="aspectRatio" class="visually-hidden">
+                            Select Aspect Ratio
+                        </label>
+
+                        <select id="aspectRatio">
+
+                            <option value="1:1">Square (1:1)</option>
+
+                            <option value="16:9">Landscape (16:9)</option>
+
+                            <option value="9:16">Portrait (9:16)</option>
+
+                            <option value="4:3">Classic (4:3)</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Generate Button -->
+                    <button class="generate-btn" id="generateBtn">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Generate
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Loading Animation -->
+            <section class="loading hidden" id="loading">
+
+                <div class="spinner"></div>
+
+                <p>Creating your imagination...</p>
+
+            </section>
+
+
+            <!-- Generated Images Section -->
+            <section class="result-section" id="resultSection">
+
+                <h2>Your Generated Images</h2>
+
+                <div class="image-gallery" id="imageGallery">
+
+                    <!-- Generated images will appear here dynamically -->
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <p>
+                Made with
+                <i class="fa-solid fa-heart"></i>
+                using AI
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
